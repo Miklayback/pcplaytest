@@ -1,110 +1,136 @@
 import { useState } from "react";
 
-export default function CheckSpecsGuide() {
-  const [formData, setFormData] = useState({
-    deviceType: "",
-    ssd: "",
-    ramSlots: "",
-    gpuCount: "",
-  });
+export default function CheckSpecsGuide({ step, setStep, formData, setFormData }) {
+  const [cpuValid, setCpuValid] = useState(false);
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+
+    // CPU validation logic
+    if (name === "cpuModel") {
+      const lower = value.toLowerCase();
+      const isValid =
+        (lower.includes("intel") && /i[3579]/.test(lower)) ||
+        (lower.includes("amd") && lower.includes("ryzen"));
+      setCpuValid(isValid);
+    }
   };
 
-  return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-6">
-      {/* 左侧：用户输入区域 */}
-      <div className="bg-white shadow p-4 rounded-xl">
-        <h2 className="text-lg font-semibold mb-4">📝 Help Us Understand Your Setup</h2>
+  const renderSpecSummary = () => (
+    <div className="bg-white shadow p-6 rounded-xl mb-6 text-base max-w-xl mx-auto">
+      <h2 className="text-xl font-bold mb-4">🔍 Your PC Specs</h2>
+      <ul className="space-y-1 text-gray-800">
+        <li>📌 Device Type: {formData.deviceType || "-"}</li>
+        <li>🧠 CPU Model: {formData.cpuModel || "-"}</li>
+        <li>⚡ RAM Speed: {formData.ramSpeed || "-"}</li>
+        <li>💾 Storage: {formData.diskTypes || "-"}</li>
+      </ul>
+    </div>
+  );
 
-        <label className="block mb-3">
-          Are you using a desktop or a laptop?
+  if (step === 1) {
+    return (
+      <div className="flex justify-center items-center min-h-screen bg-gray-100">
+        <div className="bg-white shadow-xl p-12 rounded-2xl text-center w-[60rem] h-[28rem] flex flex-col justify-center">
+          <h2 className="text-3xl font-bold mb-8">🖥️ First, are you using a desktop or laptop?</h2>
           <select
             name="deviceType"
             value={formData.deviceType}
             onChange={handleChange}
-            className="mt-1 w-full border rounded p-2"
+            className="w-1/2 mx-auto border rounded p-4 text-lg mb-6"
           >
-            <option value="">Select</option>
+            <option value="">Select one</option>
             <option value="desktop">Desktop</option>
             <option value="laptop">Laptop</option>
           </select>
-        </label>
-
-        <label className="block mb-3">
-          Do you have an SSD installed?
-          <select
-            name="ssd"
-            value={formData.ssd}
-            onChange={handleChange}
-            className="mt-1 w-full border rounded p-2"
+          <button
+            onClick={() => formData.deviceType && setStep(2)}
+            disabled={!formData.deviceType}
+            className="bg-blue-600 text-white px-10 py-4 rounded text-lg disabled:opacity-50 mx-auto"
           >
-            <option value="">Select</option>
-            <option value="yes">Yes</option>
-            <option value="no">No / Not sure</option>
-          </select>
-        </label>
-
-        <label className="block mb-3">
-          How many RAM sticks (modules) are installed?
-          <select
-            name="ramSlots"
-            value={formData.ramSlots}
-            onChange={handleChange}
-            className="mt-1 w-full border rounded p-2"
-          >
-            <option value="">Select</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="More">More than 2</option>
-            <option value="unknown">I’m not sure</option>
-          </select>
-        </label>
-
-        <label className="block mb-3">
-          How many graphics processors (GPUs) does your system show?
-          <select
-            name="gpuCount"
-            value={formData.gpuCount}
-            onChange={handleChange}
-            className="mt-1 w-full border rounded p-2"
-          >
-            <option value="">Select</option>
-            <option value="1">1 (Only integrated or discrete)</option>
-            <option value="2">2 (Integrated + Discrete)</option>
-            <option value="unknown">Not sure</option>
-          </select>
-        </label>
+            Continue
+          </button>
+        </div>
       </div>
+    );
+  }
 
-      {/* 右侧：图文教程部分 */}
-      <div className="bg-white shadow p-4 rounded-xl">
-        <h2 className="text-lg font-semibold mb-4">🔍 How to Check Your Specs (Windows)</h2>
-        <ol className="list-decimal pl-5 space-y-2 text-sm text-gray-700">
-          <li>
-            <strong>Open Task Manager</strong>: Press <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Esc</kbd>
-          </li>
-          <li>
-            Go to the <strong>Performance</strong> tab
-          </li>
-          <li>
-            Check each section:
-            <ul className="list-disc pl-5">
-              <li><strong>CPU</strong>: Core count and model</li>
-              <li><strong>Memory</strong>: Total size, slots used</li>
-              <li><strong>Disk</strong>: SSD or HDD</li>
-              <li><strong>GPU</strong>: Integrated and/or Discrete GPU</li>
-            </ul>
-          </li>
-          <li>
-            Optionally, run <code>dxdiag</code> via <kbd>Win</kbd> + <kbd>R</kbd> → type <code>dxdiag</code> → Enter
-          </li>
-          <li>
-            For advanced users: Open PowerShell and run <br /><code>Get-PhysicalDisk</code> or <code>wmic MEMORYCHIP get BankLabel, Capacity</code>
-          </li>
-        </ol>
+  if (step === 2) {
+    return (
+      <div className="bg-gray-100 min-h-screen px-6 py-8">
+        {renderSpecSummary()}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="bg-white shadow p-6 rounded-xl">
+            <h2 className="text-2xl font-bold mb-6">📝 Enter Basic Computer Info</h2>
+
+            <label className="block mb-4 text-lg">
+              CPU Model:
+              <input
+                type="text"
+                name="cpuModel"
+                value={formData.cpuModel}
+                onChange={handleChange}
+                placeholder="e.g., Intel Core i5-12400F"
+                className="mt-1 w-full border rounded p-3 text-base"
+              />
+              {!cpuValid && formData.cpuModel && (
+                <p className="text-red-600 mt-1 text-sm">❌ Invalid format. Example: Intel i5 or AMD Ryzen</p>
+              )}
+              {cpuValid && (
+                <p className="text-green-600 mt-1 text-sm">✅ Format looks good</p>
+              )}
+            </label>
+
+            <label className="block mb-4 text-lg">
+              RAM Speed (MHz):
+              <input
+                type="text"
+                name="ramSpeed"
+                value={formData.ramSpeed}
+                onChange={handleChange}
+                placeholder="e.g., 3200 MHz"
+                className="mt-1 w-full border rounded p-3 text-base"
+              />
+            </label>
+
+            <label className="block mb-4 text-lg">
+              What storage types do you see (from Task Manager)?
+              <input
+                type="text"
+                name="diskTypes"
+                value={formData.diskTypes}
+                onChange={handleChange}
+                placeholder="e.g., SSD (C:) + HDD (D:)"
+                className="mt-1 w-full border rounded p-3 text-base"
+              />
+            </label>
+
+            <button
+              onClick={() => setStep(3)}
+              disabled={!cpuValid}
+              className="mt-4 bg-blue-600 text-white px-6 py-2 rounded text-lg disabled:opacity-50"
+            >
+              Continue
+            </button>
+          </div>
+
+          <div className="bg-white shadow p-6 rounded-xl">
+            <h2 className="text-2xl font-bold mb-4">📘 How to Check Specs in Task Manager</h2>
+            <ol className="list-decimal pl-5 space-y-3 text-lg text-gray-800">
+              <li>
+                <strong>Open Task Manager</strong>: Click the <strong>Windows search bar</strong> and search for <code>Task Manager</code>
+              </li>
+              <li>Go to the <strong>Performance</strong> tab</li>
+              <li>For CPU model: Click on <strong>CPU</strong> section, check the top-right model</li>
+              <li>For RAM speed: Click on <strong>Memory</strong>, look for "Speed" at the bottom right</li>
+              <li>For storage: Click each Disk (C:, D:, etc.) and look at the top right (e.g., SSD / HDD)</li>
+            </ol>
+          </div>
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
+
+  return null;
 }
