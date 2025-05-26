@@ -13,7 +13,7 @@ export default function CheckSpecsGuide({ step, setStep, formData, setFormData, 
       const lower = value.toLowerCase();
       const isValid =
         (lower.includes("intel") && /i[3579]/.test(lower)) ||
-        (lower.includes("amd") && lower.includes("ryzen"));
+        (lower.includes("amd") && /ryzen\s*[3579]/.test(lower));
       setCpuValid(isValid);
     }
   };
@@ -33,7 +33,7 @@ export default function CheckSpecsGuide({ step, setStep, formData, setFormData, 
         />
         <datalist id="games">
           {gameList.map((g) => (
-            <option key={g} value={g} />
+            <option key={g.name} value={g.name} />
           ))}
         </datalist>
 
