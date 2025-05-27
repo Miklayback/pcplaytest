@@ -1,0 +1,632 @@
+[
+  {
+    "name": "Hogwarts Legacy",
+    "specs": {
+      "min": {
+        "intel": { "cpu": "Intel Core i5-6600", "gpu": "GTX 960" },
+        "amd": { "cpu": "Ryzen 5 1400", "gpu": "Radeon RX 570" },
+        "ram": 16,
+        "ssd": true
+      },
+      "recommended": {
+        "intel": { "cpu": "Intel i7-8700", "gpu": "GTX 1080 Ti" },
+        "amd": { "cpu": "Ryzen 5 3600", "gpu": "Radeon RX 6700 XT" },
+        "ram": 16,
+        "ssd": true
+      },
+      "fpsProfile": { "Low": 30, "Medium": 45, "High": 60 }
+    }
+  },
+  {
+    "name": "Cyberpunk 2077",
+    "specs": {
+      "min": {
+        "intel": { "cpu": "Intel i7-6700", "gpu": "GTX 1060 6GB" },
+        "amd": { "cpu": "Ryzen 5 1600", "gpu": "Radeon RX 580" },
+        "ram": 12,
+        "ssd": true
+      },
+      "recommended": {
+        "intel": { "cpu": "Intel i7-12700", "gpu": "RTX 2060 Super" },
+        "amd": { "cpu": "Ryzen 7 5800X", "gpu": "Radeon RX 6700 XT" },
+        "ram": 16,
+        "ssd": true
+      },
+      "fpsProfile": { "Low": 30, "Medium": 45, "High": 60 }
+    }
+  },
+  {
+    "name": "Elden Ring",
+    "specs": {
+      "min": {
+        "intel": { "cpu": "Intel i5-8400", "gpu": "GTX 1060" },
+        "amd": { "cpu": "Ryzen 3 3300X", "gpu": "Radeon RX 580" },
+        "ram": 12,
+        "ssd": false
+      },
+      "recommended": {
+        "intel": { "cpu": "Intel i7-8700K", "gpu": "GTX 1070" },
+        "amd": { "cpu": "Ryzen 5 3600X", "gpu": "Radeon RX Vega 56" },
+        "ram": 16,
+        "ssd": false
+      },
+      "fpsProfile": { "Low": 30, "Medium": 45, "High": 60 }
+    }
+  },
+  {
+    "name": "Call of Duty: Warzone",
+    "specs": {
+      "min": {
+        "intel": { "cpu": "Intel i3-6100", "gpu": "GTX 960" },
+        "amd": { "cpu": "Ryzen 3 1200", "gpu": "Radeon R9 380" },
+        "ram": 8,
+        "ssd": false
+      },
+      "recommended": {
+        "intel": { "cpu": "Intel i5-6600K", "gpu": "GTX 1060" },
+        "amd": { "cpu": "Ryzen 5 1400", "gpu": "Radeon RX 580" },
+        "ram": 12,
+        "ssd": false
+      },
+      "fpsProfile": { "Low": 30, "Medium": 60, "High": 120 }
+    }
+  },
+  {
+    "name": "Red Dead Redemption 2",
+    "specs": {
+      "min": {
+        "intel": { "cpu": "Intel i5-2500K", "gpu": "GTX 770" },
+        "amd": { "cpu": "FX-6300", "gpu": "Radeon R9 280" },
+        "ram": 8,
+        "ssd": false
+      },
+      "recommended": {
+        "intel": { "cpu": "Intel i7-4770K", "gpu": "GTX 1060" },
+        "amd": { "cpu": "Ryzen 5 3600", "gpu": "Radeon RX 590" },
+        "ram": 12,
+        "ssd": false
+      },
+      "fpsProfile": { "Low": 30, "Medium": 45, "High": 60 }
+    }
+  },
+ {
+    "name": "Assassin's Creed Valhalla",
+    "specs": {
+      "min": {
+        "intel": { "cpu": "Intel Core i5-4460", "gpu": "GTX 960" },
+        "amd": { "cpu": "Ryzen 3 1200", "gpu": "Radeon R9 380" },
+        "ram": 8,
+        "ssd": false
+      },
+      "recommended": {
+        "intel": { "cpu": "Intel i7-4790", "gpu": "GTX 1080" },
+        "amd": { "cpu": "Ryzen 5 1600", "gpu": "Radeon RX Vega 64" },
+        "ram": 16,
+        "ssd": true
+      },
+      "fpsProfile": { "Low": 30, "Medium": 45, "High": 60 }
+    }
+  },
+  {
+    "name": "Resident Evil Village",
+    "specs": {
+      "min": {
+        "intel": { "cpu": "Intel i5-7500", "gpu": "GTX 1050 Ti" },
+        "amd": { "cpu": "Ryzen 3 1200", "gpu": "Radeon RX 560" },
+        "ram": 8,
+        "ssd": false
+      },
+      "recommended": {
+        "intel": { "cpu": "Intel i7-8700", "gpu": "GTX 1070" },
+        "amd": { "cpu": "Ryzen 5 3600", "gpu": "Radeon RX 5700" },
+        "ram": 16,
+        "ssd": true
+      },
+      "fpsProfile": { "Low": 30, "Medium": 60, "High": 90 }
+    }
+  },
+  {
+    "name": "Far Cry 6",
+    "specs": {
+      "min": {
+        "intel": { "cpu": "Intel i5-4460", "gpu": "GTX 960" },
+        "amd": { "cpu": "Ryzen 3 1200", "gpu": "Radeon RX 460" },
+        "ram": 8,
+        "ssd": false
+      },
+      "recommended": {
+        "intel": { "cpu": "Intel i7-7700", "gpu": "GTX 1080" },
+        "amd": { "cpu": "Ryzen 5 3600X", "gpu": "Radeon RX 5700 XT" },
+        "ram": 16,
+        "ssd": true
+      },
+      "fpsProfile": { "Low": 30, "Medium": 60, "High": 90 }
+    }
+  },
+  {
+    "name": "Battlefield 2042",
+    "specs": {
+      "min": {
+        "intel": { "cpu": "Intel i5-6600K", "gpu": "GTX 1050" },
+        "amd": { "cpu": "FX-8350", "gpu": "Radeon RX 560" },
+        "ram": 8,
+        "ssd": false
+      },
+      "recommended": {
+        "intel": { "cpu": "Intel i7-4790", "gpu": "GTX 1060" },
+        "amd": { "cpu": "Ryzen 3 1300X", "gpu": "Radeon RX 580" },
+        "ram": 12,
+        "ssd": true
+      },
+      "fpsProfile": { "Low": 60, "Medium": 90, "High": 120 }
+    }
+  },
+  {
+    "name": "Death Stranding",
+    "specs": {
+      "min": {
+        "intel": { "cpu": "Intel i5-3470", "gpu": "GTX 1050" },
+        "amd": { "cpu": "Ryzen 3 1200", "gpu": "Radeon RX 560" },
+        "ram": 8,
+        "ssd": false
+      },
+      "recommended": {
+        "intel": { "cpu": "Intel i7-3770", "gpu": "GTX 1060" },
+        "amd": { "cpu": "Ryzen 5 1600", "gpu": "Radeon RX 590" },
+        "ram": 8,
+        "ssd": true
+      },
+      "fpsProfile": { "Low": 30, "Medium": 60, "High": 90 }
+    }
+  },
+  {
+    "name": "Halo Infinite",
+    "specs": {
+      "min": {
+        "intel": { "cpu": "Intel i5-4460", "gpu": "GTX 1050 Ti" },
+        "amd": { "cpu": "Ryzen 3 1200", "gpu": "Radeon RX 560" },
+        "ram": 8,
+        "ssd": false
+      },
+      "recommended": {
+        "intel": { "cpu": "Intel i7-9700K", "gpu": "RTX 2070" },
+        "amd": { "cpu": "Ryzen 5 5600X", "gpu": "Radeon RX 6700 XT" },
+        "ram": 16,
+        "ssd": true
+      },
+      "fpsProfile": { "Low": 30, "Medium": 45, "High": 60 }
+    }
+  },
+  {
+    "name": "The Witcher 3: Wild Hunt",
+    "specs": {
+      "min": {
+        "intel": { "cpu": "Intel i5-2500K", "gpu": "GTX 660" },
+        "amd": { "cpu": "FX-6300", "gpu": "Radeon HD 7870" },
+        "ram": 6,
+        "ssd": false
+      },
+      "recommended": {
+        "intel": { "cpu": "Intel i7-3770", "gpu": "GTX 770" },
+        "amd": { "cpu": "Ryzen 5 1500X", "gpu": "Radeon R9 290" },
+        "ram": 8,
+        "ssd": true
+      },
+      "fpsProfile": { "Low": 30, "Medium": 45, "High": 60 }
+    }
+  },
+  {
+    "name": "GTA V",
+    "specs": {
+      "min": {
+        "intel": { "cpu": "Intel Core 2 Quad Q6600", "gpu": "9800 GT" },
+        "amd": { "cpu": "Phenom II X4 945", "gpu": "Radeon HD 4870" },
+        "ram": 4,
+        "ssd": false
+      },
+      "recommended": {
+        "intel": { "cpu": "Intel i5-3470", "gpu": "GTX 660" },
+        "amd": { "cpu": "FX-8350", "gpu": "Radeon HD 7870" },
+        "ram": 8,
+        "ssd": true
+      },
+      "fpsProfile": { "Low": 30, "Medium": 45, "High": 60 }
+    }
+  },
+  {
+    "name": "Doom Eternal",
+    "specs": {
+      "min": {
+        "intel": { "cpu": "Intel i5-4430", "gpu": "GTX 1050 Ti" },
+        "amd": { "cpu": "Ryzen 3 1200", "gpu": "Radeon RX 560" },
+        "ram": 8,
+        "ssd": false
+      },
+      "recommended": {
+        "intel": { "cpu": "Intel i7-6700K", "gpu": "GTX 1080" },
+        "amd": { "cpu": "Ryzen 5 3600", "gpu": "Radeon RX 5700 XT" },
+        "ram": 8,
+        "ssd": true
+      },
+      "fpsProfile": { "Low": 60, "Medium": 60, "High": 60 }
+    }
+  },
+  {
+    "name": "Control",
+    "specs": {
+      "min": {
+        "intel": { "cpu": "Intel i5-4690", "gpu": "GTX 780" },
+        "amd": { "cpu": "Ryzen 3 1200", "gpu": "Radeon RX 570" },
+        "ram": 8,
+        "ssd": false
+      },
+      "recommended": {
+        "intel": { "cpu": "Intel i5-7600K", "gpu": "GTX 1660" },
+        "amd": { "cpu": "Ryzen 5 2600", "gpu": "Radeon RX Vega 56" },
+        "ram": 16,
+        "ssd": true
+      },
+      "fpsProfile": { "Low": 30, "Medium": 45, "High": 60 }
+    }
+  },
+  {
+    "name": "Metro Exodus",
+    "specs": {
+      "min": {
+        "intel": { "cpu": "Intel i5-4440", "gpu": "GTX 670" },
+        "amd": { "cpu": "FX-8370", "gpu": "Radeon R9 380" },
+        "ram": 8,
+        "ssd": false
+      },
+      "recommended": {
+        "intel": { "cpu": "Intel i7-4770K", "gpu": "GTX 1070" },
+        "amd": { "cpu": "Ryzen 5 1500X", "gpu": "Radeon RX Vega 56" },
+        "ram": 8,
+        "ssd": true
+      },
+      "fpsProfile": { "Low": 30, "Medium": 45, "High": 60 }
+    }
+  },
+  {
+    "name": "Counter-Strike 2",
+    "specs": {
+      "min": {
+        "intel": { "cpu": "Intel i5-2500K", "gpu": "GTX 1050 Ti" },
+        "amd": { "cpu": "Ryzen 3 1300X", "gpu": "Radeon RX 570" },
+        "ram": 8,
+        "ssd": true
+      },
+      "recommended": {
+        "intel": { "cpu": "Intel i7-9700K", "gpu": "RTX 2070" },
+        "amd": { "cpu": "Ryzen 7 3700X", "gpu": "Radeon RX 6750 XT" },
+        "ram": 16,
+        "ssd": true
+      },
+      "fpsProfile": { "Low": 60, "Medium": 120, "High": 240 }
+    }
+  },
+  {
+    "name": "League of Legends",
+    "specs": {
+      "min": {
+        "intel": { "cpu": "Intel Core i3-530", "gpu": "HD 4600" },
+        "amd": { "cpu": "Athlon II X4 640", "gpu": "Radeon HD 7570" },
+        "ram": 4,
+        "ssd": false
+      },
+      "recommended": {
+        "intel": { "cpu": "Intel i5-3300", "gpu": "GTX 560" },
+        "amd": { "cpu": "Ryzen 3 1200", "gpu": "Radeon R7 250" },
+        "ram": 8,
+        "ssd": false
+      },
+      "fpsProfile": { "Low": 60, "Medium": 144, "High": 240 }
+    }
+  },
+  {
+    "name": "Fortnite",
+    "specs": {
+      "min": {
+        "intel": { "cpu": "Intel Core i3-3225", "gpu": "Intel HD 4000" },
+        "amd": { "cpu": "A8-7600", "gpu": "Radeon R7 (APU)" },
+        "ram": 4,
+        "ssd": false
+      },
+      "recommended": {
+        "intel": { "cpu": "Intel i5-7300U", "gpu": "GTX 960" },
+        "amd": { "cpu": "Ryzen 3 2200G", "gpu": "Radeon RX 550" },
+        "ram": 8,
+        "ssd": true
+      },
+      "fpsProfile": { "Low": 60, "Medium": 120, "High": 240 }
+    }
+  },
+  {
+    "name": "Minecraft",
+    "specs": {
+      "min": {
+        "intel": { "cpu": "Intel i3-3210", "gpu": "Intel HD 4000" },
+        "amd": { "cpu": "A8-7600", "gpu": "Radeon R5" },
+        "ram": 4,
+        "ssd": false
+      },
+      "recommended": {
+        "intel": { "cpu": "Intel i5-4690", "gpu": "GTX 750 Ti" },
+        "amd": { "cpu": "Ryzen 3 1200", "gpu": "Radeon RX 460" },
+        "ram": 8,
+        "ssd": false
+      },
+      "fpsProfile": { "Low": 60, "Medium": 120, "High": 240 }
+    }
+  },
+  {
+    "name": "PUBG",
+    "specs": {
+      "min": {
+        "intel": { "cpu": "Intel i5-4430", "gpu": "GTX 960" },
+        "amd": { "cpu": "FX-6300", "gpu": "Radeon R7 370" },
+        "ram": 8,
+        "ssd": false
+      },
+      "recommended": {
+        "intel": { "cpu": "Intel i5-6600K", "gpu": "GTX 1060" },
+        "amd": { "cpu": "Ryzen 5 1600", "gpu": "Radeon RX 580" },
+        "ram": 16,
+        "ssd": true
+      },
+      "fpsProfile": { "Low": 60, "Medium": 100, "High": 144 }
+    }
+  },
+  {
+    "name": "Dota 2",
+    "specs": {
+      "min": {
+        "intel": { "cpu": "Dual core from Intel or AMD at 2.8 GHz", "gpu": "NVIDIA GeForce 8600/9600GT" },
+        "amd": { "cpu": "Athlon II X2 250", "gpu": "Radeon HD 5670" },
+        "ram": 4,
+        "ssd": false
+      },
+      "recommended": {
+        "intel": { "cpu": "Intel i5", "gpu": "GTX 650" },
+        "amd": { "cpu": "Ryzen 3 2200G", "gpu": "Radeon RX 550" },
+        "ram": 8,
+        "ssd": false
+      },
+      "fpsProfile": { "Low": 60, "Medium": 120, "High": 240 }
+    }
+  },
+  {
+    "name": "Overwatch 2",
+    "specs": {
+      "min": {
+        "intel": { "cpu": "Intel i3", "gpu": "GTX 600 series" },
+        "amd": { "cpu": "FX-6300", "gpu": "Radeon HD 7850" },
+        "ram": 6,
+        "ssd": false
+      },
+      "recommended": {
+        "intel": { "cpu": "Intel i7", "gpu": "RTX 2060" },
+        "amd": { "cpu": "Ryzen 5 3600", "gpu": "Radeon RX 6700 XT" },
+        "ram": 8,
+        "ssd": true
+      },
+      "fpsProfile": { "Low": 60, "Medium": 120, "High": 240 }
+    }
+  },
+  {
+    "name": "Rainbow Six Siege",
+    "specs": {
+      "min": {
+        "intel": { "cpu": "Intel i3-560", "gpu": "GTX 460" },
+        "amd": { "cpu": "Phenom II X4 945", "gpu": "Radeon HD 5850" },
+        "ram": 6,
+        "ssd": false
+      },
+      "recommended": {
+        "intel": { "cpu": "Intel i5-2500K", "gpu": "GTX 670" },
+        "amd": { "cpu": "Ryzen 3 1200", "gpu": "Radeon RX 560" },
+        "ram": 8,
+        "ssd": false
+      },
+      "fpsProfile": { "Low": 60, "Medium": 120, "High": 240 }
+    }
+  },
+  {
+    "name": "FIFA 24",
+    "specs": {
+      "min": {
+        "intel": { "cpu": "Intel i5-6600K", "gpu": "GTX 1050 Ti" },
+        "amd": { "cpu": "Ryzen 5 1400", "gpu": "Radeon RX 560" },
+        "ram": 8,
+        "ssd": false
+      },
+      "recommended": {
+        "intel": { "cpu": "Intel i7-6700", "gpu": "GTX 1660" },
+        "amd": { "cpu": "Ryzen 5 2600", "gpu": "Radeon RX 590" },
+        "ram": 12,
+        "ssd": true
+      },
+      "fpsProfile": { "Low": 60, "Medium": 60, "High": 60 }
+    }
+  },
+  {
+    "name": "NBA 2K24",
+    "specs": {
+      "min": {
+        "intel": { "cpu": "Intel i3-2100", "gpu": "GTX 460" },
+        "amd": { "cpu": "Phenom II X4 945", "gpu": "Radeon HD 6850" },
+        "ram": 4,
+        "ssd": false
+      },
+      "recommended": {
+        "intel": { "cpu": "Intel i5-4430", "gpu": "GTX 770" },
+        "amd": { "cpu": "Ryzen 5 1500X", "gpu": "Radeon RX 570" },
+        "ram": 8,
+        "ssd": true
+      },
+      "fpsProfile": { "Low": 60, "Medium": 60, "High": 60 }
+    }
+  },
+  {
+    "name": "Lost Ark",
+    "specs": {
+      "min": {
+        "intel": { "cpu": "Intel i3", "gpu": "GTX 460" },
+        "amd": { "cpu": "FX-6300", "gpu": "Radeon HD 7850" },
+        "ram": 8,
+        "ssd": false
+      },
+      "recommended": {
+        "intel": { "cpu": "Intel i5", "gpu": "GTX 1050" },
+        "amd": { "cpu": "Ryzen 5 1400", "gpu": "Radeon RX 560" },
+        "ram": 16,
+        "ssd": true
+      },
+      "fpsProfile": { "Low": 60, "Medium": 100, "High": 144 }
+    }
+  },
+  {
+    "name": "Rust",
+    "specs": {
+      "min": {
+        "intel": { "cpu": "Intel i7-3770", "gpu": "GTX 670" },
+        "amd": { "cpu": "FX-8350", "gpu": "Radeon R9 380" },
+        "ram": 10,
+        "ssd": true
+      },
+      "recommended": {
+        "intel": { "cpu": "Intel i7-4790K", "gpu": "GTX 980" },
+        "amd": { "cpu": "Ryzen 5 2600", "gpu": "Radeon RX 590" },
+        "ram": 16,
+        "ssd": true
+      },
+      "fpsProfile": { "Low": 60, "Medium": 90, "High": 120 }
+    }
+  },
+  {
+    "name": "ARK: Survival Evolved",
+    "specs": {
+      "min": {
+        "intel": { "cpu": "Intel i5-2400", "gpu": "GTX 670" },
+        "amd": { "cpu": "FX-8320", "gpu": "Radeon HD 7870" },
+        "ram": 8,
+        "ssd": false
+      },
+      "recommended": {
+        "intel": { "cpu": "Intel i7-4770K", "gpu": "GTX 980" },
+        "amd": { "cpu": "Ryzen 5 1600", "gpu": "Radeon RX 590" },
+        "ram": 16,
+        "ssd": true
+      },
+      "fpsProfile": { "Low": 30, "Medium": 45, "High": 60 }
+    }
+  },
+  {
+    "name": "Escape from Tarkov",
+    "specs": {
+      "min": {
+        "intel": { "cpu": "Intel i3-4170", "gpu": "GTX 950" },
+        "amd": { "cpu": "FX-6300", "gpu": "Radeon R9 270X" },
+        "ram": 8,
+        "ssd": true
+      },
+      "recommended": {
+        "intel": { "cpu": "Intel i5-9600K", "gpu": "RTX 2060" },
+        "amd": { "cpu": "Ryzen 5 3600", "gpu": "Radeon RX 6700 XT" },
+        "ram": 16,
+        "ssd": true
+      },
+      "fpsProfile": { "Low": 45, "Medium": 60, "High": 90 }
+    }
+  },
+  {
+    "name": "Starfield",
+    "specs": {
+      "min": {
+        "intel": { "cpu": "Intel i7-6800K", "gpu": "GTX 1070 Ti" },
+        "amd": { "cpu": "Ryzen 5 2600X", "gpu": "Radeon RX 590" },
+        "ram": 16,
+        "ssd": true
+      },
+      "recommended": {
+        "intel": { "cpu": "Intel i5-10600K", "gpu": "RTX 2080" },
+        "amd": { "cpu": "Ryzen 7 5800X", "gpu": "Radeon RX 6800 XT" },
+        "ram": 16,
+        "ssd": true
+      },
+      "fpsProfile": { "Low": 30, "Medium": 45, "High": 60 }
+    }
+  },
+  {
+    "name": "Palworld",
+    "specs": {
+      "min": {
+        "intel": { "cpu": "Intel i5-3570K", "gpu": "GTX 1050" },
+        "amd": { "cpu": "Ryzen 3 1300X", "gpu": "Radeon RX 560" },
+        "ram": 8,
+        "ssd": false
+      },
+      "recommended": {
+        "intel": { "cpu": "Intel i9-9900K", "gpu": "RTX 2070" },
+        "amd": { "cpu": "Ryzen 7 5800X", "gpu": "Radeon RX 6750 XT" },
+        "ram": 32,
+        "ssd": true
+      },
+      "fpsProfile": { "Low": 45, "Medium": 60, "High": 90 }
+    }
+  },
+  {
+    "name": "Helldivers 2",
+    "specs": {
+      "min": {
+        "intel": { "cpu": "Intel i7-4790K", "gpu": "GTX 1050 Ti" },
+        "amd": { "cpu": "Ryzen 5 1400", "gpu": "Radeon RX 570" },
+        "ram": 8,
+        "ssd": true
+      },
+      "recommended": {
+        "intel": { "cpu": "Intel i7-9700K", "gpu": "RTX 2060" },
+        "amd": { "cpu": "Ryzen 5 5600", "gpu": "Radeon RX 6700 XT" },
+        "ram": 16,
+        "ssd": true
+      },
+      "fpsProfile": { "Low": 60, "Medium": 90, "High": 144 }
+    }
+  },
+  {
+    "name": "Genshin Impact",
+    "specs": {
+      "min": {
+        "intel": { "cpu": "Intel i5", "gpu": "GTX 1030" },
+        "amd": { "cpu": "Ryzen 3 1200", "gpu": "Radeon RX 550" },
+        "ram": 8,
+        "ssd": false
+      },
+      "recommended": {
+        "intel": { "cpu": "Intel i7", "gpu": "GTX 1060" },
+        "amd": { "cpu": "Ryzen 5 2600", "gpu": "Radeon RX 580" },
+        "ram": 16,
+        "ssd": true
+      },
+      "fpsProfile": { "Low": 60, "Medium": 60, "High": 60 }
+    }
+  },
+  {
+    "name": "Dark Souls III",
+    "specs": {
+      "min": {
+        "intel": { "cpu": "Intel i3-2100", "gpu": "GTX 750 Ti" },
+        "amd": { "cpu": "FX-6300", "gpu": "Radeon HD 7870" },
+        "ram": 4,
+        "ssd": false
+      },
+      "recommended": {
+        "intel": { "cpu": "Intel i7-3770", "gpu": "GTX 970" },
+        "amd": { "cpu": "Ryzen 5 1500X", "gpu": "Radeon RX 580" },
+        "ram": 8,
+        "ssd": true
+      },
+      "fpsProfile": { "Low": 60, "Medium": 60, "High": 60 }
+    }
+  }
+]

@@ -32,8 +32,8 @@ export default function CheckSpecsGuide({ step, setStep, formData, setFormData, 
           className="w-1/2 mx-auto border rounded p-4 text-lg mb-6"
         />
         <datalist id="games">
-          {gameList.map((g) => (
-            <option key={g.name} value={g.name} />
+          {gameList.map((name, index) => (
+            <option key={index} value={name} />
           ))}
         </datalist>
 
