@@ -46,9 +46,20 @@ export function evaluateSystem(userSpecs) {
   else if (cpuScore >= minCpuScore) messages.push("⚠️ CPU meets minimum");
   else messages.push("❌ CPU is below minimum");
 
-  if (gpuScore >= recGpuScore) messages.push("✅ GPU meets recommended level");
-  else if (gpuScore >= minGpuScore) messages.push("⚠️ GPU meets minimum");
-  else messages.push("❌ GPU is below minimum");
+  if (!gpuModel || gpuScore === 0) {
+    if (isLikelyMobileGPU(gpuModel)) {
+      messages.push("❌ GPU is not a PC-class graphics card (detected mobile GPU)");
+    } else {
+      messages.push("❌ GPU not recognized");
+    }
+  } else if (gpuScore >= recGpuScore) {
+    messages.push("✅ GPU meets recommended level");
+  } else if (gpuScore >= minGpuScore) {
+    messages.push("⚠️ GPU meets minimum");
+  } else {
+    messages.push("❌ GPU is below minimum");
+  }
+
 
   const recRam = spec.recommended.ram;
   const minRam = spec.min.ram;
