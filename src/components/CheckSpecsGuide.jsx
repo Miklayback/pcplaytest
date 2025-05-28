@@ -1,24 +1,32 @@
-// ✅ FINAL VERSION - With CPU Smart Autocomplete Input
 import { useState } from "react";
 import { gameList } from "./gameList";
-import { cpuList } from "./cpuList";
+import { cpuList } from "./cpulist";
 
 export default function CheckSpecsGuide({ step, setStep, formData, setFormData, autoSpecs = {} }) {
   const [cpuValid, setCpuValid] = useState(false);
+
+  const normalize = (str = "") => {
+    return str
+      .toLowerCase()
+      .replace(/(intel|amd|ryzen|core|\(r\)|\(tm\)|gen|cpu|processor|@|\d+\.\d+\s*ghz)/gi, "")
+      .replace(/[^a-z0-9\- ]/gi, "")
+      .trim();
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
 
     if (name === "cpuModel") {
-      const lower = value.toLowerCase();
-      const isValid =
-        (lower.includes("intel") && /i[3579]/.test(lower)) ||
-        (lower.includes("amd") && /ryzen\s*[3579]/.test(lower)) ||
-        cpuList.some((cpu) => cpu.toLowerCase().includes(lower));
-      setCpuValid(isValid);
+      const inputNorm = normalize(value);
+      const matched = cpuList.find((cpu) => normalize(cpu).includes(inputNorm));
+      setCpuValid(!!matched);
     }
   };
+
+  const filteredCpuOptions = cpuList
+    .filter((cpu) => normalize(cpu).includes(normalize(formData.cpuModel || "")))
+    .slice(0, 20);
 
   const renderGameStep = () => (
     <div className="flex justify-center items-start min-h-screen bg-gray-100 pt-20">
@@ -38,7 +46,6 @@ export default function CheckSpecsGuide({ step, setStep, formData, setFormData, 
             <option key={index} value={name} />
           ))}
         </datalist>
-
         <button
           onClick={() => formData.game && setStep(2)}
           disabled={!formData.game}
@@ -93,15 +100,15 @@ export default function CheckSpecsGuide({ step, setStep, formData, setFormData, 
               className="mt-1 w-full border rounded p-3 text-base"
             />
             <datalist id="cpus">
-              {cpuList.map((cpu, idx) => (
+              {filteredCpuOptions.map((cpu, idx) => (
                 <option key={idx} value={cpu} />
               ))}
             </datalist>
             {!cpuValid && formData.cpuModel && (
-              <p className="text-red-600 mt-1 text-sm">❌ Invalid format or unknown CPU</p>
+              <p className="text-red-600 mt-1 text-sm">❌ CPU not recognized</p>
             )}
             {cpuValid && (
-              <p className="text-green-600 mt-1 text-sm">✅ Format looks good</p>
+              <p className="text-green-600 mt-1 text-sm">✅ CPU recognized</p>
             )}
           </label>
 
@@ -170,20 +177,22 @@ export default function CheckSpecsGuide({ step, setStep, formData, setFormData, 
         <div className="bg-white shadow p-6 rounded-xl">
           <h2 className="text-2xl font-bold mb-4">📘 How to Check Specs in Task Manager</h2>
           <ol className="list-decimal pl-5 space-y-3 text-lg text-gray-800">
-            <li>Open Task Manager</li>
+            <li><strong>Open Task Manager</strong>: Click the <strong>Windows search bar</strong> and search for <code>Task Manager</code></li>
             <li>Go to the <strong>Performance</strong> tab</li>
-            <li>Look for <strong>CPU</strong> on the top right for model</li>
-            <li>Check <strong>Memory</strong> for RAM speed and size</li>
-            <li>Click each <strong>Disk</strong> (C:, D:) to see type (SSD/HDD)</li>
+            <li>For CPU model: Click on <strong>CPU</strong> section, check the top-right model</li>
+            <li>For RAM speed: Click on <strong>Memory</strong>, look for "Speed" at the bottom right (listed in MT/s)</li>
+            <li>For RAM capacity: Click on <strong>Memory</strong> section, check the top-right number to see how many GB</li>
+            <li>For storage: Click each Disk (C:, D:, etc.) and look at the top right (e.g., SSD / HDD)</li>
           </ol>
           <hr className="my-6 border-gray-300" />
           <h2 className="text-2xl font-bold mb-4">📘 如何在任务管理器中查看电脑配置</h2>
           <ol className="list-decimal pl-5 space-y-3 text-lg text-gray-800">
-            <li>打开任务管理器</li>
-            <li>切换到 <strong>性能</strong> 标签</li>
-            <li>看 <strong>CPU</strong> 右上角的型号</li>
-            <li>看 <strong>内存</strong> 的速度和容量</li>
-            <li>点击 <strong>磁盘</strong> 看是否为 SSD / HDD</li>
+            <li><strong>打开任务管理器</strong>：点击 <strong>Windows 搜索栏</strong>，搜索 <code>任务管理器 Task Manager</code></li>
+            <li>切换到 <strong>性能 Performance</strong> 标签页</li>
+            <li>查看 CPU 型号：点击 <strong>CPU</strong>，看右上角显示的型号</li>
+            <li>查看内存速度：点击 <strong>内存 Memory</strong>，右下角有 “速度 Speed” 一栏（单位是 MT/s）</li>
+            <li>查看内存容量：点击 <strong>内存</strong>，看右上角显示的多少GB</li>
+            <li>查看硬盘类型：点击每一个磁盘（C:, D: 等），右上角会显示类型（例如 SSD 或 HDD）</li>
           </ol>
         </div>
       </div>
