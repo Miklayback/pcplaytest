@@ -19,6 +19,12 @@ function getBrand(name) {
   return "unknown";
 }
 
+function isLikelyMobileGPU(name) {
+  if (!name) return false;
+  const val = name.toLowerCase();
+  return val.includes("apple") || val.includes("mali") || val.includes("adreno") || val.includes("powervr");
+}
+
 export function evaluateSystem(userSpecs) {
   const { cpuModel, gpuModel, ramGB, hasSSD, selectedGame } = userSpecs;
   const cpuBrand = getBrand(cpuModel);
@@ -42,10 +48,12 @@ export function evaluateSystem(userSpecs) {
 
   const messages = [];
 
+  // CPU Check
   if (cpuScore >= recCpuScore) messages.push("✅ CPU meets recommended level");
   else if (cpuScore >= minCpuScore) messages.push("⚠️ CPU meets minimum");
   else messages.push("❌ CPU is below minimum");
 
+  // GPU Check
   if (!gpuModel || gpuScore === 0) {
     if (isLikelyMobileGPU(gpuModel)) {
       messages.push("❌ GPU is not a PC-class graphics card (detected mobile GPU)");
@@ -60,7 +68,7 @@ export function evaluateSystem(userSpecs) {
     messages.push("❌ GPU is below minimum");
   }
 
-
+  // RAM Check
   const recRam = spec.recommended.ram;
   const minRam = spec.min.ram;
   const ram = parseInt(ramGB);
@@ -68,6 +76,7 @@ export function evaluateSystem(userSpecs) {
   else if (ram >= minRam) messages.push("⚠️ RAM meets minimum");
   else messages.push("❌ RAM is too low");
 
+  // SSD Check
   const requiresSSD = spec.recommended.ssd || spec.min.ssd;
   if (requiresSSD) {
     if (hasSSD) messages.push("✅ SSD is present");
@@ -79,8 +88,8 @@ export function evaluateSystem(userSpecs) {
   const bad = messages.filter((m) => m.startsWith("❌")).length;
 
   let verdict = "❌ Cannot run the game.";
-  if (bad === 0 && warning >= 1) verdict = "⚠️ Playable at Low settings";
-  if (bad === 0 && warning === 0) verdict = "✅ Smooth at Medium/High settings";
+  if (gpuScore > 0 && bad === 0 && warning >= 1) verdict = "⚠️ Playable at Low settings";
+  if (gpuScore > 0 && bad === 0 && warning === 0) verdict = "✅ Smooth at Medium/High settings";
 
   return {
     status: verdict,
